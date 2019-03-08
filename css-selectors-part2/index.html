@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Selectors</title>
+    <style>
+      div {
+        border: 2px solid red;
+        margin: 20px;
+        padding: 10px;
+      }
+      
+      /* p:first-child {
+        background: pink;
+      }
+
+      p:last-child {
+        background: red;
+      }
+
+      span:first-child {
+        background: gray;
+      }
+
+       p:first-of-type {
+        background: green;
+      }
+
+      span:last-of-type {
+        background: gold;
+      } */
+
+      p:nth-child(2){
+        color: green;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div id="parent1" class="parent">
+      <p>First Paragraph</p>
+      <span>First Span</span>
+      <p>Second Paragraph</p>
+      <p>Third Paragraph</p>
+      <p>Fourth Paragraph</p>
+      <span>Second Span</span>
+    </div>
+    <div id="parent2" class="parent">
+      <span>First Span</span>
+      <p>First Paragraph</p>
+      <p>Second Paragraph</p>
+      <span>Second Span</span>
+      <p>Third Paragraph</p>
+    </div>
+    <div id="parent3">
+      <ol>
+        <li>One</li>
+        <li>Two</li>
+        <li>Three</li>
+        <li>Four</li>
+      </ol>
+    </div>
+  </body>
+</html>
