@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>attribute</title>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+  </head>
+  <body>
+    <button onclick="update()">Change</button>
+    <input type="checkbox" />
+    <br />
+    <br />
+    <svg width="600" height="600" >
+      <g transform="translate(40,40)">
+        <circle r="40"></circle>
+        <circle r="40" cx="120"></circle>
+        <circle r="40" cx="240"></circle>
+        <circle r="40" cx="360"></circle>
+        <circle r="40" cx="480"></circle>
+      </g>
+    </svg>
+    <script>
+      const update = () => {
+        // d3.selectAll("circle").attr("r", "20");
+        // d3.selectAll("circle").attr("r", () => (Math.random()*40));
+        d3.selectAll("circle").attr("cy", (data,index) => (index*90));
+        d3.select("input[type=checkbox]").property("checked", true);
+      }
+    </script>
+  </body>
+</html>
