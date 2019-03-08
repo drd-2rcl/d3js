@@ -27,10 +27,38 @@
 
       span:last-of-type {
         background: gold;
+      } 
+
+      p:nth-last-child(2){
+        color: green;
+      }
+
+      p:nth-last-child(3){
+        color: red;
+      }
+
+      p:only-child {
+        color: red;
+      }
+
+      span:only-of-type{
+        color: blue; 
+      }
+
+      #parent3 > ol {
+        background: red;
+      }
+
+      #parent2 > span {
+        color: red;
       } */
 
-      p:nth-child(2){
-        color: green;
+      #parent3 li {
+        color: blue;
+      }
+
+      ol > li {
+        background: pink;
       }
 
     </style>
