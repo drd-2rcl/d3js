@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>SVG Selections</title>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <style>
+      .changeColor {
+        stroke: indigo;
+        fill: green;
+        stroke-width:4;
+      }
+
+      .boxes {
+        width: 100px;
+        height: 100px;
+        border: 1px solid black;
+        background: yellow;
+        float: left;
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <button onclick="addClass()">Change</button>
+    <button onclick="changeBack()">Back</button>
+    <br />
+    <br />
+    <svg width="600" height="200">
+      <circle cx="50" cy="50" r="40"></circle>
+      <circle cx="140" cy="50" r="40"></circle>
+      <circle cx="230" cy="50" r="40"></circle>
+      <circle cx="320" cy="50" r="40"></circle>
+    </svg>
+    <br />
+    <br />
+    <button onclick="addBoxes()">Add</button>
+    <div id="parent">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <script>
+
+      const addBoxes = () => {
+        d3.selectAll("#parent > div").classed("boxes", true);
+      }
+
+      const addClass = () => {
+        // d3.selectAll("circle:nth-child(even)").classed("changeColor", true);
+        d3.selectAll("circle").classed("changeColor", true);
+      }
+
+      const changeBack = () => {
+        d3.selectAll("circle").classed("changeColor", (data, index) => ( index%2 == 0 ? true : false));
+      } 
+      
+    </script>
+  </body>
+</html>
