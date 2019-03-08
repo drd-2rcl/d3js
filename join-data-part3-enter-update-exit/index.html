@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Object as Data</title>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <style>
+      p {
+        background: black;
+        color: white;
+        font-size: 30px;
+        width:130px;
+        margin: 20px;
+        padding: 10px;
+      }
+
+      .person {
+        background: indigo;
+        color: gray;
+        font-size: 30px;
+        width:130px;
+        margin: 20px;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+      <!-- Number (No = NUMBER) of elements = number of data points (Update Selection) -->
+      <!-- <p>Chair 1</p>
+      <p>Chair 2</p>
+      <p>Chair 3</p>
+      <p>Chair 4</p>
+      <script>
+        const myData = ["Person 1", "Person 2", "Person 3", "Person 4"];
+        d3.selectAll("p").data(myData).text((data) => (data)).classed("person", true);
+      </script> -->
+
+      <!-- Number of data points > Number of elements (Enter Selection)-->
+      <p>Chair 1</p>
+      <p>Chair 2</p>
+      <p>Chair 3</p>
+      <p>Chair 4</p>
+      <script>
+        const myData = ["Person 1", "Person 2", "Person 3", "Person 4", "Person 5", "Person 6"];
+        const update = d3.selectAll("p").data(myData);
+        update.enter().append("p");
+        update.text((data) => (data)).classed("person", true);
+      </script>
+  </body>
+</html>
