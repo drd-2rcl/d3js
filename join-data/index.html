@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Join Data</title>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <style>
+      .changeColor {
+        background: blue;
+        color: gray;
+        width: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <script>
+      const myData = [50, 45, 35, 30, 25];
+      d3.selectAll("p").data(myData).text((data, index) => (data))
+        .style("font-size", (data) => (data + "px"))
+        .classed("changeColor", (data) => (data>30))
+    </script>
+  </body>
+</html>

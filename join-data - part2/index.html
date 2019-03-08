@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Join Data - part2</title>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+  </head>
+  <body>
+    <svg width="600" height="600">
+      <circle></circle>
+      <circle></circle>
+      <circle></circle>
+      <circle></circle>
+      <circle></circle>
+    </svg>
+    <script>
+      const myDetails = [
+        {radius:20, x:50, y:50, color:"red"},
+        {radius:25, x:150, y:50, color:"blue"},
+        {radius:30, x:250, y:50, color:"yellow"},
+        {radius:35, x:350, y:50, color:"purple"},
+        {radius:40, x:450, y:50, color:"green"}
+      ];
+      d3.selectAll("circle").data(myDetails)
+        .attr("r", (data,index) => (index*20))
+        .attr("cx", (data) => (data.x))
+        .attr("cy", (data) => (data.y))
+        .attr("fill", (data) => (data.color))
+    </script>
+  </body>
+</html>
