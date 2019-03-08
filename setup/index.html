@@ -1,23 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>SVG setup</title>
+    <title>SVG Selections</title>
     <!-- This is a setup for environment. If this don't work, has download file and call here -->
     <script src="https://d3js.org/d3.v5.min.js"></script>
-    <style>
-    </style>
+    <style></style>
   </head>
   <body>
-    <svg width="500" height="140">
-      <g fill="deeppink" stroke="indigo" stroke-width="3">
-        <rect x="20" y="20" width="50" height="50" />
-        <rect x="80" y="20" width="50" height="50" />
-        <rect x="140" y="20" width="50" height="50" />
-        <rect x="200" y="20" width="50" height="50" />
-      </g> 
-    </svg>
+    <div id="container">
+      <span>First Span</span>
+      <p>First Paragraph</p>
+      <p>Second Paragraph</p>
+      <p>Third Paragraph</p>
+      <span>Second Span</span>
+      <p>Txhis is about <span id="inside">Selections</span></p>
+    </div>
     <script>
-      d3.select("rect:nth-child(2)").style("fill", "pink")
+      // d3.select("div").style("background", "gray")
+      // d3.sel9ect("p").style("color", "red");
+      // d3.selectAll("p").style("background", "green");
+      // d3.select("#container").style("background", "green");
+      d3.select("#inside").style("background", "green");
+
     </script>
   </body>
 </html>
