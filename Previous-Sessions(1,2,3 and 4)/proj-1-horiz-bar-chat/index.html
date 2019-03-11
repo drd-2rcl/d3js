@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Horizontal Bar Chat</title>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <style>
+      div {
+        height: 25px;
+        margin: 10px;
+        background: blue;
+        color: red;
+        text-align: center;
+        line-height: 25px;
+      }
+    </style>
+  </head>
+  <body>
+      <script>
+        const numbers = [31, 25, 35, 18, 9, 14];
+        const bars = d3.select("body").selectAll("div").data(numbers);
+        bars.enter().append("div")
+            .style("width", (data) => ((data+10) + "px"))
+            .text((data) => (data))
+
+        // console.log(numbers)
+      </script>
+  </body>
+</html>
