@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Vertical Bar Chat</title>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <style>
+      div {
+        height: 25px;
+        margin: 10px;
+        background: blue;
+        color: red;
+        text-align: center;
+        line-height: 25px;
+      }
+    </style>
+  </head>
+  <body>
+      <script>
+        const numbers = [31, 25, 35, 18, 9, 14];
+        const width = 600;
+        const height = 500;
+        const svg = d3.select("body").append("svg")
+                      .attr("width", width)
+                      .attr("height", height)
+                      .style("background", "black ");
+
+        const rectangles = svg.selectAll("rect").data(numbers);
+        rectangles.enter().append("rect")
+                  .attr("width", 25)
+                  .attr("height", (data, index) => (data*10))
+                  .attr("x", (data, index) => (index*28))
+                  .attr("y", (data,index) => (height - (data*10)))
+                  .style("fill", "indigo")
+
+        const data = svg.selectAll("text").data(numbers);
+        data.enter().append("text")
+            .text((data) => (data))
+            .style("stroke", "red")
+            .style("font-size", "15px")
+            .attr("x", (data, index) => (5 + (index*28)))
+            .attr("y", (data, index) => ((height - 5) - (data*10)))
+      </script>
+  </body>
+</html>
