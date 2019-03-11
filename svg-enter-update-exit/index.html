@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>SVG: Enter Update Exit</title>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <style>
+    </style>
+  </head>
+  <body>
+      <script>
+        const length = [25, 45, 65, 85];
+        const svg = d3.select("body").append("svg").attr("width", 800).attr("height", 600).style("background", "brown"); 
+        
+        const squares = svg.selectAll("rect").data(length);
+        squares.enter().append("rect")
+        .attr("width", (data) => (data))
+        .attr("height", (data) => (2*data))
+        .attr("x", (data,index) => (2*(index+1)*data))
+        .attr("y", (data, index) => ((index+1)*80))
+        .style("fill", "red")
+        .style("stroke", "purple")
+        .style("stroke-width", 5)
+      </script>
+  </body>
+</html>
