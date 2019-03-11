@@ -47,19 +47,36 @@
       </script> -->
 
       <!-- Number of data points < Number of elements (Exit   Selection)-->
-      <p>Chair 1</p>
+      <!-- <p>Chair 1</p>
       <p>Chair 2</p>
       <p>Chair 3</p>
-      <p>Chair 4</p>
-
-      <script>
-
+      <p>Chair 4</p> -->
+      <!-- <script>
       const myData = ["Person 1", "Person 2"];
       const update = d3.selectAll("p").data(myData);
       update.exit().remove();
       update.text((data) => (data)).classed("person", true);
+      </script> -->
 
-      
+      <!-- Enter Update and Exit Selections in Version 5 -->
+      <!-- <p>Chair 1</p>
+      <p>Chair 2</p>
+      <p>Chair 3</p>
+      <p>Chair 4</p>
+      <script>
+        const myData = ["Person 1", "Person 2", "Person 3", "Person 4", "Person 5", "Person 6"];
+        const update = d3.selectAll("p").data(myData);
+        update.enter().append("p").merge(update).text((data) => (data)).classed("person", true);
+      </script> -->
+
+      <!-- General Case -->
+
+
+      <script>
+        const myData = ["Person 1", "Person 2", "Person 3", "Person 4", "Person 5", "Person 6"];
+        const update = d3.selectAll("p").data(myData);
+        update.exit().remove();
+        update.enter().append("p").merge(update).text((data) => (data)).classed("person", true);
       </script>
   </body>
 </html>
